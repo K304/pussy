@@ -1,0 +1,62 @@
+##########################
+# Config for test server (http://neocore.globo-tech.vpn/)
+##########################
+
+# Show errors, enable Whoops! handler.
+debug: true
+
+### Monolog
+monolog:
+    # You can use Monolog\Logger level constants
+    # [DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY]
+    level: DEBUG
+
+### Mongo
+mongo:
+    default: {server: 'mongodb://mongo:27017', db: 'vulkan'}
+    # Needs for users_balance_real_log migration
+    archive: {server: 'mongodb://mongo:27017', db: 'vulkan_archive_log'}
+
+games:
+    demo_key: 'TEST1000'
+    game_messenger_js: 'https://flash.shubnako.com/gr/as2/current/lib/game_messenger.js'
+    runners:
+        as2:
+            src: https://flash.shubnako.com/gm/index.html
+            partner: gsdev1
+            dictList:
+            lang: ru
+            wl: dev5
+        as3:
+            src: https://flash.shubnako.com/gm/index.html
+            partner: gsdev1
+            dictList:
+            lang: ru
+            wl: dev5
+        as3c:
+            src: https://flash.shubnako.com/gm/index.html
+            partner: gsdev1
+            dictList:
+            lang: ru
+            wl: dev5
+        html5:
+            src: https://h5shubnako.com/ih/7/index.html
+            server_id: dev1
+            ping_url: /ping
+            ping_interval: 30
+            denum: 100
+            exit_url: /
+            cashier_url: /deposit
+            lang: ru
+            wl: dev5
+    flash_game_box:
+        default_size:
+            height: 600
+            width: 800
+redis:
+    driver: 'predis'
+    settings:
+        dsn: 'tcp://redis:6379'
+        options:
+            profile: '2.8'
+            prefix: ''

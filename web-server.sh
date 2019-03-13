@@ -1,0 +1,1 @@
+/usr/bin/php -S localhost:8080 -t /var/www/vulkan-eapi/web /var/www/vulkan-eapi/web/index.php

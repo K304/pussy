@@ -1,0 +1,29 @@
+# Vagrant custom config
+# main config: /puphpet/config.yaml
+#
+# For add vagrant to project:
+#   run "git submodule add git@gitlab-int-v.globo-tech.vpn:a.tupichenkov/vagrant.git puphpet"
+#   copy vagrant.yaml and Vagrantfile
+#   change vagrant.yaml ip and host
+#   git commit
+#
+# possible errors:
+#   some times, when internet connection is bad, vagrant can't install some modules
+#   and then vagrant will print error in command line (red coolor text):
+#     The SSH command responded with a non-zero exit status. Vagrant
+#     assumes that this means the command failed. The output for this command
+#     should be in the log above. Please read the output to determine what
+#     went wrong.
+#   try run "vagrant destroy" and "vagrant up"
+#
+vagrantfile:
+    vm:
+        hostname: vulkan.dev
+        network:
+            private_network: 192.168.56.105
+nginx:
+    vhosts:
+        nxv_tulxgbqrblbr:
+            server_name: vulkan.dev
+            server_aliases:
+                - www.vulkan.dev
